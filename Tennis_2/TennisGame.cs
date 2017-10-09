@@ -36,16 +36,13 @@ namespace Tennis_2
             {
                 if (_firstPlayerScoreTimes == 4 || _secondPlayerScoreTimes == 4)
                 {
+                    var advancePlayer = AdvancePlayer();
                     if (Math.Abs(_firstPlayerScoreTimes - _secondPlayerScoreTimes) == 1)
                     {
-                        return _firstPlayerName + " Adv";
+                        return advancePlayer + " Adv";
                     }
 
-                    var winner = _firstPlayerScoreTimes > _secondPlayerScoreTimes
-                        ? _firstPlayerName
-                        : _secondPlayerName;
-
-                    return winner + " Win";
+                    return advancePlayer + " Win";
                 }
 
                 return scoreLookup[_firstPlayerScoreTimes] + " " + scoreLookup[_secondPlayerScoreTimes];
@@ -62,6 +59,13 @@ namespace Tennis_2
         public void SecondPlayerScore()
         {
             _secondPlayerScoreTimes++;
+        }
+
+        private string AdvancePlayer()
+        {
+            return _firstPlayerScoreTimes > _secondPlayerScoreTimes
+                ? _firstPlayerName
+                : _secondPlayerName;
         }
     }
 }
