@@ -16,16 +16,23 @@ namespace Tennis_2
         [TestMethod]
         public void Fifteen_Love()
         {
-            tennisGame.FirstPlayerScore();
+            GivenFirstPlayerScoreTimes(1);
             ScoreShouldBe("Fifteen Love");
         }
 
         [TestMethod]
         public void Thirty_Love()
         {
-            tennisGame.FirstPlayerScore();
-            tennisGame.FirstPlayerScore();
+            GivenFirstPlayerScoreTimes(2);
             ScoreShouldBe("Thirty Love");
+        }
+
+        private void GivenFirstPlayerScoreTimes(int times)
+        {
+            for (int i = 0; i < times; i++)
+            {
+                tennisGame.FirstPlayerScore();
+            }
         }
 
         private void ScoreShouldBe(string expected)
