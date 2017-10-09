@@ -41,6 +41,13 @@ namespace Tennis_2
             ScoreShouldBe("Love Fifteen");
         }
 
+        [TestMethod]
+        public void Fifteen_All()
+        {
+            tennisGame.FirstPlayerScore();
+            tennisGame.SecondPlayerScore();
+            ScoreShouldBe("Fifteen All");
+        }
         private void GivenFirstPlayerScoreTimes(int times)
         {
             for (int i = 0; i < times; i++)
