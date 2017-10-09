@@ -8,6 +8,8 @@ namespace Tennis_2
         private readonly string _secondPlayerName;
         private int _firstPlayerScoreTimes;
 
+        private int _secondPlayerScoreTimes;
+
         private Dictionary<int, string> scoreLookup = new Dictionary<int, string>
             {
                 {0, "Love" },
@@ -16,18 +18,26 @@ namespace Tennis_2
                 {3, "Forty" },
             };
 
-        private int _secondPlayerScoreTimes;
-
         public TennisGame(string firstPlayerName, string secondPlayerName)
         {
             _firstPlayerName = firstPlayerName;
             _secondPlayerName = secondPlayerName;
         }
 
+        public void FirstPlayerScore()
+        {
+            _firstPlayerScoreTimes++;
+        }
+
         public string GetScore()
         {
             if (_firstPlayerScoreTimes != _secondPlayerScoreTimes)
             {
+                if (_firstPlayerScoreTimes == 4)
+                {
+                    return _firstPlayerName + " Win";
+                }
+
                 return scoreLookup[_firstPlayerScoreTimes] + " " + scoreLookup[_secondPlayerScoreTimes];
             }
 
@@ -37,11 +47,6 @@ namespace Tennis_2
             }
 
             return scoreLookup[_firstPlayerScoreTimes] + " All";
-        }
-
-        public void FirstPlayerScore()
-        {
-            _firstPlayerScoreTimes++;
         }
 
         public void SecondPlayerScore()
