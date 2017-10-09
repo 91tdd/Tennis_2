@@ -23,6 +23,10 @@ namespace Tennis_2
                 return scoreLookup[_firstPlayerScoreTimes] + " " + scoreLookup[_secondPlayerScoreTimes];
             }
 
+            if (_firstPlayerScoreTimes == 1 && _secondPlayerScoreTimes == 1)
+            {
+                return "Fifteen All";
+            }
             return "Love All";
         }
 
