@@ -34,7 +34,7 @@ namespace Tennis_2
         {
             if (_firstPlayerScoreTimes != _secondPlayerScoreTimes)
             {
-                if (_firstPlayerScoreTimes == 4 || _secondPlayerScoreTimes == 4)
+                if (_firstPlayerScoreTimes > 3 || _secondPlayerScoreTimes > 3)
                 {
                     var advancePlayer = AdvancePlayer();
                     if (Math.Abs(_firstPlayerScoreTimes - _secondPlayerScoreTimes) == 1)
