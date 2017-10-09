@@ -37,6 +37,10 @@ namespace Tennis_2
                 {
                     return _firstPlayerName + " Win";
                 }
+                if (_secondPlayerScoreTimes == 4)
+                {
+                    return _secondPlayerName + " Win";
+                }
 
                 return scoreLookup[_firstPlayerScoreTimes] + " " + scoreLookup[_secondPlayerScoreTimes];
             }
