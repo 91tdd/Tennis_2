@@ -33,13 +33,13 @@ namespace Tennis_2
         {
             if (_firstPlayerScoreTimes != _secondPlayerScoreTimes)
             {
-                if (_firstPlayerScoreTimes == 4)
+                if (_firstPlayerScoreTimes == 4 || _secondPlayerScoreTimes == 4)
                 {
-                    return _firstPlayerName + " Win";
-                }
-                if (_secondPlayerScoreTimes == 4)
-                {
-                    return _secondPlayerName + " Win";
+                    var winner = _firstPlayerScoreTimes > _secondPlayerScoreTimes
+                        ? _firstPlayerName
+                        : _secondPlayerName;
+
+                    return winner + " Win";
                 }
 
                 return scoreLookup[_firstPlayerScoreTimes] + " " + scoreLookup[_secondPlayerScoreTimes];
