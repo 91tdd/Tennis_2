@@ -13,11 +13,18 @@ namespace Tennis_2
                 {3, "Forty" },
             };
 
+        private int _secondPlayerScoreTimes;
+
         public string GetScore()
         {
             if (_firstPlayerScoreTimes > 0)
             {
                 return scoreLookup[_firstPlayerScoreTimes] + " Love";
+            }
+
+            if (_secondPlayerScoreTimes > 0)
+            {
+                return "Love " + scoreLookup[_secondPlayerScoreTimes];
             }
 
             return "Love All";
@@ -30,7 +37,7 @@ namespace Tennis_2
 
         public void SecondPlayerScore()
         {
-            throw new System.NotImplementedException();
+            _secondPlayerScoreTimes++;
         }
     }
 }
