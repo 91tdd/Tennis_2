@@ -8,5 +8,10 @@ namespace Tennis_2
         {
             return "Love All";
         }
+
+        public void FirstPlayerScore()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

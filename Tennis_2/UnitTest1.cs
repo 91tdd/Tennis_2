@@ -16,6 +16,7 @@ namespace Tennis_2
         [TestMethod]
         public void Fifteen_Love()
         {
+            tennisGame.FirstPlayerScore();
             ScoreShouldBe("Fifteen Love");
         }
 
