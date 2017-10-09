@@ -95,6 +95,14 @@ namespace Tennis_2
             ScoreShouldBe("Joey Adv");
         }
 
+        [TestMethod]
+        public void FirstPlayer_Advance_when_6_5()
+        {
+            GivenFirstPlayerScoreTimes(6);
+            GivenSecondPlayerScoreTimes(5);
+            ScoreShouldBe("Joey Adv");
+        }
+
         private void GivenSecondPlayerScoreTimes(int times)
         {
             for (int i = 0; i < times; i++)
