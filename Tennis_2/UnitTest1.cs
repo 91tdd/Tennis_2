@@ -87,6 +87,14 @@ namespace Tennis_2
             ScoreShouldBe("Mei Win");
         }
 
+        [TestMethod]
+        public void FirstPlayer_Advance_when_4_3()
+        {
+            GivenFirstPlayerScoreTimes(4);
+            GivenSecondPlayerScoreTimes(3);
+            ScoreShouldBe("Joey Adv");
+        }
+
         private void GivenSecondPlayerScoreTimes(int times)
         {
             for (int i = 0; i < times; i++)
