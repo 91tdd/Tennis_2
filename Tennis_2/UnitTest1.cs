@@ -127,6 +127,22 @@ namespace Tennis_2
             ScoreShouldBe("Joey Win");
         }
 
+        [TestMethod]
+        public void SecondPlayer_Win_after_adv()
+        {
+            GivenFirstPlayerScoreTimes(3);
+            GivenSecondPlayerScoreTimes(5);
+            ScoreShouldBe("Mei Win");
+        }
+
+        [TestMethod]
+        public void SecondPlayer_Win_after_adv_when_4_6()
+        {
+            GivenFirstPlayerScoreTimes(4);
+            GivenSecondPlayerScoreTimes(6);
+            ScoreShouldBe("Mei Win");
+        }
+
         private void GivenSecondPlayerScoreTimes(int times)
         {
             for (int i = 0; i < times; i++)
