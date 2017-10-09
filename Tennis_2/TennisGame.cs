@@ -23,16 +23,7 @@ namespace Tennis_2
                 return scoreLookup[_firstPlayerScoreTimes] + " " + scoreLookup[_secondPlayerScoreTimes];
             }
 
-            if (_firstPlayerScoreTimes == 2 && _secondPlayerScoreTimes == 2)
-            {
-                return "Thirty All";
-            }
-            if (_firstPlayerScoreTimes == 1 && _secondPlayerScoreTimes == 1)
-            {
-                return "Fifteen All";
-            }
-
-            return "Love All";
+            return scoreLookup[_firstPlayerScoreTimes] + " All";
         }
 
         public void FirstPlayerScore()
