@@ -6,10 +6,16 @@
 
         public string GetScore()
         {
+            if (this._firstPlayerScoreTimes == 2)
+            {
+                return "Thirty Love";
+            }
+
             if (this._firstPlayerScoreTimes == 1)
             {
                 return "Fifteen Love";
             }
+
             return "Love All";
         }
 
