@@ -37,7 +37,12 @@ namespace Tennis_2
                 return IsReadyForWin() ? AdvanceScore() : NormalScore();
             }
 
-            return IsDeuce() ? "Deuce" : NormalAll();
+            return IsDeuce() ? Deuce() : NormalAll();
+        }
+
+        private static string Deuce()
+        {
+            return "Deuce";
         }
 
         private string NormalAll()
