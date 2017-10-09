@@ -23,6 +23,11 @@ namespace Tennis_2
                 return scoreLookup[_firstPlayerScoreTimes] + " " + scoreLookup[_secondPlayerScoreTimes];
             }
 
+            if (_firstPlayerScoreTimes == 3 && _secondPlayerScoreTimes == 3)
+            {
+                return "Deuce";
+            }
+
             return scoreLookup[_firstPlayerScoreTimes] + " All";
         }
 
