@@ -32,28 +32,48 @@ namespace Tennis_2
 
         public string GetScore()
         {
-            if (_firstPlayerScoreTimes != _secondPlayerScoreTimes)
+            if (IsDifferentScore())
             {
-                if (_firstPlayerScoreTimes > 3 || _secondPlayerScoreTimes > 3)
-                {
-                    var advancePlayer = AdvancePlayer();
-                    if (Math.Abs(_firstPlayerScoreTimes - _secondPlayerScoreTimes) == 1)
-                    {
-                        return advancePlayer + " Adv";
-                    }
-
-                    return advancePlayer + " Win";
-                }
-
-                return scoreLookup[_firstPlayerScoreTimes] + " " + scoreLookup[_secondPlayerScoreTimes];
+                return IsReadyForWin() ? AdvanceScore() : NormalScore();
             }
 
-            if (_firstPlayerScoreTimes >= 3)
-            {
-                return "Deuce";
-            }
+            return IsDeuce() ? "Deuce" : NormalAll();
+        }
 
+        private string NormalAll()
+        {
             return scoreLookup[_firstPlayerScoreTimes] + " All";
+        }
+
+        private string NormalScore()
+        {
+            return scoreLookup[_firstPlayerScoreTimes] + " " + scoreLookup[_secondPlayerScoreTimes];
+        }
+
+        private string AdvanceScore()
+        {
+            var advancePlayer = AdvancePlayer();
+            if (Math.Abs(_firstPlayerScoreTimes - _secondPlayerScoreTimes) == 1)
+            {
+                return advancePlayer + " Adv";
+            }
+
+            return advancePlayer + " Win";
+        }
+
+        private bool IsDeuce()
+        {
+            return _firstPlayerScoreTimes >= 3;
+        }
+
+        private bool IsReadyForWin()
+        {
+            return _firstPlayerScoreTimes > 3 || _secondPlayerScoreTimes > 3;
+        }
+
+        private bool IsDifferentScore()
+        {
+            return _firstPlayerScoreTimes != _secondPlayerScoreTimes;
         }
 
         public void SecondPlayerScore()
