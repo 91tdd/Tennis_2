@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Tennis_2
 {
@@ -35,6 +36,11 @@ namespace Tennis_2
             {
                 if (_firstPlayerScoreTimes == 4 || _secondPlayerScoreTimes == 4)
                 {
+                    if (Math.Abs(_firstPlayerScoreTimes - _secondPlayerScoreTimes) == 1)
+                    {
+                        return _firstPlayerName + " Adv";
+                    }
+
                     var winner = _firstPlayerScoreTimes > _secondPlayerScoreTimes
                         ? _firstPlayerName
                         : _secondPlayerName;
