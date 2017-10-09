@@ -27,5 +27,10 @@ namespace Tennis_2
         {
             _firstPlayerScoreTimes++;
         }
+
+        public void SecondPlayerScore()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
