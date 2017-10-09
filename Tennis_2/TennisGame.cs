@@ -52,13 +52,12 @@ namespace Tennis_2
 
         private string AdvanceScore()
         {
-            var advancePlayer = AdvancePlayer();
-            if (Math.Abs(_firstPlayerScoreTimes - _secondPlayerScoreTimes) == 1)
-            {
-                return advancePlayer + " Adv";
-            }
+            return AdvancePlayerName() + (IsAdvance() ? " Adv" : " Win");
+        }
 
-            return advancePlayer + " Win";
+        private bool IsAdvance()
+        {
+            return Math.Abs(_firstPlayerScoreTimes - _secondPlayerScoreTimes) == 1;
         }
 
         private bool IsDeuce()
@@ -81,7 +80,7 @@ namespace Tennis_2
             _secondPlayerScoreTimes++;
         }
 
-        private string AdvancePlayer()
+        private string AdvancePlayerName()
         {
             return _firstPlayerScoreTimes > _secondPlayerScoreTimes
                 ? _firstPlayerName
