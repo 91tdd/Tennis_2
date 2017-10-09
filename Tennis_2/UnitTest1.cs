@@ -5,12 +5,18 @@ namespace Tennis_2
     [TestClass]
     public class UnitTest1
     {
+        private TennisGame tennisGame = new TennisGame();
+
         [TestMethod]
         public void Love_all()
         {
-            TennisGame tennisGame = new TennisGame();
+            ScoreShouldBe("Love All");
+        }
+
+        private void ScoreShouldBe(string expected)
+        {
             string score = tennisGame.GetScore();
-            Assert.AreEqual("Love All", score);
+            Assert.AreEqual(expected, score);
         }
     }
 }
