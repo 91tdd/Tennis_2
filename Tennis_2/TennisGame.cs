@@ -17,12 +17,12 @@ namespace Tennis_2
 
         public string GetScore()
         {
-            if (_firstPlayerScoreTimes > 0)
+            if (_firstPlayerScoreTimes > 0 && _secondPlayerScoreTimes == 0)
             {
                 return scoreLookup[_firstPlayerScoreTimes] + " Love";
             }
 
-            if (_secondPlayerScoreTimes > 0)
+            if (_firstPlayerScoreTimes == 0 && _secondPlayerScoreTimes > 0)
             {
                 return "Love " + scoreLookup[_secondPlayerScoreTimes];
             }
