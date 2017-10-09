@@ -4,6 +4,8 @@ namespace Tennis_2
 {
     public class TennisGame
     {
+        private readonly string _firstPlayerName;
+        private readonly string _secondPlayerName;
         private int _firstPlayerScoreTimes;
 
         private Dictionary<int, string> scoreLookup = new Dictionary<int, string>
@@ -15,6 +17,12 @@ namespace Tennis_2
             };
 
         private int _secondPlayerScoreTimes;
+
+        public TennisGame(string firstPlayerName, string secondPlayerName)
+        {
+            _firstPlayerName = firstPlayerName;
+            _secondPlayerName = secondPlayerName;
+        }
 
         public string GetScore()
         {
