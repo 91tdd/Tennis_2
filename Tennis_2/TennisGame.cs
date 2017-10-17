@@ -8,6 +8,7 @@ namespace Tennis_2
         private readonly string _firstPlayerName;
         private readonly string _secondPlayerName;
         private int _firstPlayerScoreTimes; 
+
         private int _secondPlayerScoreTimes;
 
         private Dictionary<int, string> scoreLookup = new Dictionary<int, string>
